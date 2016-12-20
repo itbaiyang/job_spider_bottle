@@ -3,8 +3,14 @@ from spider import job_51job
 app = Bottle()
 
 
-@app.post('/hello')
+@app.post('/login')
 def login():
+    print(request.method)
+    return "success!"
+
+
+@app.post('/hello')
+def hello():
     print(request.method)
     if request.POST:
         data = request.POST.decode()
