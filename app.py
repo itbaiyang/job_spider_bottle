@@ -14,8 +14,7 @@ def hello():
     print(request.method)
     if request.POST:
         data = request.POST.decode()
-        print()
-        job_51job.spider_job(data['company'])
+        job_51job.spider_job(data['companyName'])
         return "success!"
     else:
         return "方法错误"

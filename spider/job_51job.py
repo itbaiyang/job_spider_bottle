@@ -8,7 +8,7 @@ from spider.push_data import push_data
 client = MongoClient('127.0.0.1', 27017)
 db = client.spider
 collection = db.job51
-base_url = 'http://search.51job.com/jobsearch/search_result.php?keyword='
+base_url = 'http://search.51job.com/jobsearch/search_result.php?romJs=1&jobarea=010000%2C00&keyword='
 url_spider = "https://data.api.zhironghao.com/update/job"
 
 
