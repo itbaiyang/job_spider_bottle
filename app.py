@@ -9,7 +9,7 @@ def login():
     return "success!"
 
 
-@app.post('/hello')
+@app.post('/spider_job')
 def hello():
     print(request.method)
     if request.POST:
