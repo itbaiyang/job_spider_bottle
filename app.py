@@ -19,4 +19,4 @@ def hello():
         return "success!"
     else:
         return "方法错误"
-run(app, host='localhost', port=8443)
+run(app, host='0.0.0.0', port=8443)
