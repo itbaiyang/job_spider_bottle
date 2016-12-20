@@ -3,7 +3,7 @@ from spider import job_51job
 app = Bottle()
 
 
-@app.post('/login')
+@app.get('/login')
 def login():
     print(request.method)
     return "success!"
