@@ -23,7 +23,7 @@ def get_data(html_text, company):
         page_str = str(page_i)
         url_page = base_url + company + '&keywordtype=1&curr_page=' + page_str
         print(url_page)
-        html_page = get_content(url_page)
+        html_page = get_content(url_page, 'gbk')
         bs = BeautifulSoup(html_page, "html.parser")  # 创建BeautifulSoup对象
         content = bs.find(id='resultList')
         li = content.find_all("div", class_='el')
@@ -44,7 +44,7 @@ def get_data(html_text, company):
                 # bid['company_link'] = company_belong.find('a').get('href')
                 bid['companyName'] = company_belong.find('a').get('title')
 
-                html_detail = get_content(bid['mark'])
+                html_detail = get_content(bid['mark'], 'gbk')
                 bs_detail = BeautifulSoup(html_detail, "html.parser")
                 detail_title = bs_detail.find(class_="ltype").get_text()
                 clean_str = re.sub(r'\n|\r|\t|&nbsp|\xa0|\\xa0|\u3000|\\u3000|\\u0020|\u0020', '', detail_title)
@@ -81,5 +81,5 @@ def get_data(html_text, company):
 
 def spider_job(company):
     url = base_url + company + '&keywordtype=1&curr_page=1'
-    html = get_content(url)
+    html = get_content(url, 'gbk')
     get_data(html, company)

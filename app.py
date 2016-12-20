@@ -1,5 +1,5 @@
 from bottle import Bottle, run, request
-from spider import job_51job
+from spider import job_51job, job_yc
 app = Bottle()
 
 
@@ -14,7 +14,9 @@ def hello():
     print(request.method)
     if request.POST:
         data = request.POST.decode()
-        job_51job.spider_job(data['companyName'])
+        print(data['companyName'])
+        # job_51job.spider_job(data['companyName'])
+        job_yc.spider_job(data['companyName'])
         return "success!"
     else:
         return "方法错误"

@@ -5,7 +5,7 @@ import socket
 import http.client
 
 
-def get_content(url, data = None):
+def get_content(url, encoding):
     header = {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
         'Accept-Encoding': 'gzip, deflate, sdch',
@@ -17,7 +17,7 @@ def get_content(url, data = None):
     while True:
         try:
             rep = requests.get(url, headers=header, timeout=timeout)
-            rep.encoding = 'gbk'
+            rep.encoding = encoding
             break
         except socket.timeout as e:
             print('3:', e)
