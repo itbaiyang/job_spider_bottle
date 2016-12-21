@@ -14,6 +14,7 @@ url_spider = "https://data.api.zhironghao.com/update/job"
 
 def get_data(html_text, company):
     bs = BeautifulSoup(html_text, "html.parser")  # 创建BeautifulSoup对象
+    print(company)
     content = bs.find(id='resultList')
     page = content.find_all(class_='dw_tlc')
     page1 = page[0].find_all(class_='rt')
@@ -75,6 +76,7 @@ def get_data(html_text, company):
                 bid['positionIntroduce'] = clean_job
                 bid['from'] = '51job'
                 logging.info(bid)
+                # print(bid)
                 push_data(url_spider, bid)
                 # collection.insert(bid)
 

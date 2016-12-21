@@ -15,7 +15,7 @@ def hello():
     if request.POST:
         data = request.POST.decode()
         print(data['companyName'])
-        # job_51job.spider_job(data['companyName'])
+        job_51job.spider_job(data['companyName'])
         job_yc.spider_job(data['companyName'])
         return "success!"
     else:
