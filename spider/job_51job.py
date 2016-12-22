@@ -83,5 +83,6 @@ def get_data(html_text, company):
 
 def spider_job(company):
     url = base_url + company + '&keywordtype=1&curr_page=1'
+    print(company)
     html = get_content(url, 'gbk')
     get_data(html, company)
