@@ -14,9 +14,7 @@ def hello():
     print(type(request.method))
     if request.POST:
         print(type(request.POST))
-        data_tow = request.POST.decode('utf-8')
-        print(type(data_tow))
-        data = data_tow
+        data = request.POST.decode('UTF-8')
         print(type(data))
         print(data['companyName'])
         # job_51job.spider_job(data['companyName'])
