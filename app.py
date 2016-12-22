@@ -11,12 +11,16 @@ def login():
 
 @app.post('/spider_job')
 def hello():
-    print(request.method)
+    print(type(request.method))
     if request.POST:
-        data = request.POST.decode()
+        print(type(request.POST))
+        data_tow = request.POST.decode('ascii')
+        print(type(data_tow))
+        data = data_tow.decode('utf-8')
+        print(type(data))
         print(data['companyName'])
-        job_51job.spider_job(data['companyName'])
-        job_yc.spider_job(data['companyName'])
+        # job_51job.spider_job(data['companyName'])
+        # job_yc.spider_job(data['companyName'])
         return "success!"
     else:
         return "方法错误"
