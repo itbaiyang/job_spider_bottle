@@ -15,10 +15,9 @@ def hello():
     if request.POST:
         print(type(request.POST))
         data = request.POST.decode('UTF-8')
-        print(type(data))
         print(data['companyName'])
-        # job_51job.spider_job(data['companyName'])
-        # job_yc.spider_job(data['companyName'])
+        job_51job.spider_job(data['companyName'])
+        job_yc.spider_job(data['companyName'])
         return "success!"
     else:
         return "方法错误"
