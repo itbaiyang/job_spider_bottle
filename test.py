@@ -1,9 +1,9 @@
 import requests
-url = 'http://localhost:8443/spider_job'
+# url = 'http://localhost:8443/spider_job'
+url = 'http://123.206.29.128:8443/spider_job'
 # url = 'http://localhost:8080/login'
 data = {
-    # 'company': '123'
-    'companyName': 'CBC(北京)信用管理有限公司'
+    'companyName': '百度在线网络技术（北京）有限公司'
 }
 # response = requests.get(url)
 response = requests.post(url, data=data)
